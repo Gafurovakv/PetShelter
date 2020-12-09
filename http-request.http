@@ -1,0 +1,30 @@
+GET http://localhost:8080/pets/
+###
+GET http://localhost:8080/pets/3
+###
+GET http://localhost:8080/pets/search?type=dog&age=1&gender=girl
+###
+POST http://localhost:8080/pets/save
+Content-Type: application/json
+
+{
+  "name": "Busya",
+  "type": "kat",
+  "age": 1,
+  "gender": "girl",
+ "shelterId": 3
+}
+###
+DELETE http://localhost:8080/pets/remove/
+###
+POST http://localhost:8080/pets/update/
+Content-Type: application/json
+
+{
+  "id": 2,
+  "name": "Bobik",
+  "shelterId": 1
+}
+
+
+###

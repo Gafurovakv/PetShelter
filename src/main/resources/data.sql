@@ -8,4 +8,5 @@ insert into pets (name, type, age, gender, shelters_id)
 VALUES ('Murzik', 'kat', 2, 'boy', 3),
        ('Filya', 'dog', 1, 'boy', 1),
        ('Lusia', 'dog', 5, 'girl', 2),
-       ('Aisha', 'dog', 1, 'girl', 4);
+       ('Aisha', 'dog', 1, 'girl', 4),
+       ('Bobik', 'dog', 2, 'boy', 1);

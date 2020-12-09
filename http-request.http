@@ -1,10 +1,10 @@
-GET http://localhost:8080/pets/
+GET https://petshelter2020.herokuapp.com/pets/
 ###
-GET http://localhost:8080/pets/3
+GET https://petshelter2020.herokuapp.com/pets/1
 ###
-GET http://localhost:8080/pets/search?type=dog&age=1&gender=girl
+GET https://petshelter2020.herokuapp.com/pets/search?type=dog&age=1&gender=girl
 ###
-POST http://localhost:8080/pets/save
+POST https://petshelter2020.herokuapp.com/pets/save
 Content-Type: application/json
 
 {
@@ -15,9 +15,9 @@ Content-Type: application/json
  "shelterId": 3
 }
 ###
-DELETE http://localhost:8080/pets/remove/
+DELETE https://petshelter2020.herokuapp.com/pets/remove/
 ###
-POST http://localhost:8080/pets/update/
+POST https://petshelter2020.herokuapp.com/pets/update/
 Content-Type: application/json
 
 {

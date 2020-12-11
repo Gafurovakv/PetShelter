@@ -13,16 +13,16 @@ public class PetDto {
     String gender;
     int shelterId;
 
-//    public PetDto(String name, String type, int age, String gender, int shelterId) {
-//        this.name = name;
-//        this.type = type;
-//        this.age = age;
-//        this.gender = gender;
-//        this.shelterId = shelterId;
-//    }
+    public PetDto(int id, String name, int shelterId) {
+        this.id = id;
+        this.name = name;
+        this.shelterId = shelterId;
+    }
 
-
+    public PetDto() {
+    }
 }
+
 
 
 

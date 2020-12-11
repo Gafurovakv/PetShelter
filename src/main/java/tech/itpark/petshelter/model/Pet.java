@@ -2,7 +2,6 @@ package tech.itpark.petshelter.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Value;
 
 @Data
 @AllArgsConstructor
@@ -25,7 +24,6 @@ public class Pet {
         this.id = id;
         this.name = name;
     }
-
 }
 
 

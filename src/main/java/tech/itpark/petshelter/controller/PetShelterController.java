@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.*;
 import tech.itpark.petshelter.manager.PetManager;
 import tech.itpark.petshelter.model.Pet;
 import tech.itpark.petshelter.model.PetDto;
-import tech.itpark.petshelter.model.Shelter;
 
 import java.util.List;
 
@@ -27,8 +26,7 @@ public class PetShelterController {
     }
 
     @PostMapping("/save")
-    public Pet save(
-            @RequestBody PetDto pet) {
+    public Pet save(@RequestBody PetDto pet) {
         return manager.save(pet);
     }
 

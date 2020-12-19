@@ -9,7 +9,6 @@ import tech.itpark.petshelter.model.PetDto;
 import java.util.List;
 
 @RestController
-
 @RequestMapping("pets")
 @AllArgsConstructor
 public class PetShelterController {

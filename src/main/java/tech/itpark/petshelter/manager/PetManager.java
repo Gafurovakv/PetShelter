@@ -9,7 +9,6 @@ import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Component;
 import tech.itpark.petshelter.exception.ChangeDataException;
-import tech.itpark.petshelter.exception.NotFoundException;
 import tech.itpark.petshelter.mapper.PetRowMapper;
 import tech.itpark.petshelter.model.Pet;
 import tech.itpark.petshelter.model.PetDto;
@@ -30,7 +29,8 @@ public class PetManager {
                         "pet.shelters_id, shelter.id as shelter_id, shelter.name as shelter_name," +
                         " shelter.address from pets pet inner join shelters shelter" +
                         " on shelter.id = pet.shelters_id order by pet.id limit 10",
-                new EmptySqlParameterSource(), (rs, rowNum) ->
+                new EmptySqlParameterSource(),
+                (rs, rowNum) ->
                         new Pet(rs.getInt("pet_id"),
                                 rs.getString("pet_name"),
                                 rs.getString("type"),
@@ -52,7 +52,7 @@ public class PetManager {
                     Map.of("id", id),
                     rowMapper);
         } catch (EmptyResultDataAccessException e) {
-            throw new NotFoundException("Pet not found");
+            return null;
         }
     }
 

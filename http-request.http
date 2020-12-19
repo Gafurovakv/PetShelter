@@ -19,7 +19,7 @@ Content-Type: application/json
 }
 
 ###
-DELETE https://petshelter2020.herokuapp.com/pets/remove/2
+DELETE https://petshelter2020.herokuapp.com/pets/remove/1
 
 ###
 POST https://petshelter2020.herokuapp.com/pets/update

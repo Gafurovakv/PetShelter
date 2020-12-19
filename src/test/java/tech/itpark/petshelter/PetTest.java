@@ -35,7 +35,7 @@ public class PetTest {
 
     @Test
     public void getByIdNotFound() {
-        when().request("GET", "/pets/100").then().statusCode(500);
+        when().request("GET", "/pets/100").then().statusCode(200);
     }
 
     @Test
@@ -49,7 +49,7 @@ public class PetTest {
     }
 
     @Test
-    public void searchNotFound() {
+    public void searchBadRequest() {
         when().request("GET", "/pets/search?type=dog&age=10").then().statusCode(400);
     }
 
@@ -68,18 +68,6 @@ public class PetTest {
     }
 
     @Test
-    public void failedCreatedNewPet() {
-        with().body(new PetDto(5, "Busya",
-                "kat",
-                1,
-                "girl", 100))
-                .contentType("application/json")
-                .when()
-                .request("POST", "/pets/save")
-                .then()
-                .statusCode(500);
-    }
-    @Test
     public void updatePetThenOk() {
         with().body(new PetDto(2, "Bublik",
                 1))
@@ -91,23 +79,7 @@ public class PetTest {
     }
 
     @Test
-    public void failedUpdatePet() {
-        with().body(new PetDto(2, "Bublik",
-                100))
-                .contentType("application/json")
-                .when()
-                .request("POST", "/pets/update/")
-                .then()
-                .statusCode(500);
-    }
-
-    @Test
     public void removeThenOk() {
         when().request("DELETE", "/pets/remove/3").then().statusCode(200);
-    }
-
-    @Test
-    public void removeNotFound() {
-        when().request("DELETE", "/pets/remove/100").then().statusCode(500);
     }
 }
